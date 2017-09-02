@@ -10,10 +10,15 @@ html {
     display: inline-block;
     text-align: center;
     margin:1em;
-    
+    text-decoration: none;
+    color:#750329;
 }
 
-.button--active, .button:hover {
+.button:visited {
+    color:#750329;
+}
+
+.button--active, .button:hover, .button--active:visited {
     color:#fff;
     background: #750329;
 
