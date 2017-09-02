@@ -1,51 +1,62 @@
-<div class="color-demo">
+<!doctype html>
 
-    <div class="color-demo__controls">
-        <div class="controls__nav">
-            <a href="#/" class="button button--active">Colors</a>
-            <a href="#/" class="button">Images</a>
-        </div>
-        <div class="controls__select">
-            <div class="select select--active">
-                <!-- use data-swatch to define the color that will fill the svg, use data-title to define the name of the swatch for the hud -->
-                <div class="swatch" data-swatch="#EED9C4" data-title="Almond"></div>
-                <div class="swatch" data-swatch="#454936" data-title="Kelp"></div>
-                <div class="swatch" data-swatch="#D0C0E5" data-title="Prelude"></div>
-                <div class="swatch" data-swatch="#E1F6E8" data-title="Tara"></div>
+<html lang="en">
+<head>
+    <meta charset="utf-8">   
+    <title>Swatchr - Default</title>      
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/swatchr.js"></script>
+</head>
+<body>
+    <div class="color-demo">
+        <div class="color-demo__controls">
+            <div class="controls__nav">
+                <a href="#/" class="button button--active">Colors</a>
+                <a href="#/" class="button">Images</a>
             </div>
-            <div class="select">
-                <!-- data-swatch can use images as well -->
-                <!-- Patterns from Subtle Patterns -->
-                <div class="swatch" data-swatch="img/patterns/hip-square.png" data-title="Hip Square"></div>
-                <div class="swatch" data-swatch="img/patterns/organic-tiles.png" data-title="Organic Tiles"></div>
-                <div class="swatch" data-swatch="img/patterns/skyscraper.png" data-title="Skyscraper"></div>
-                <div class="swatch" data-swatch="img/patterns/vintage-concrete.png" data-title="Vintage Concrete"></div>
+            <div class="controls__select">
+                <div class="select select--active">
+                    <!-- use data-swatch to define the color that will fill the svg, use data-title to define the name of the swatch for the hud -->
+                    <div class="swatch" data-swatch="#EED9C4" data-title="Almond"></div>
+                    <div class="swatch" data-swatch="#454936" data-title="Kelp"></div>
+                    <div class="swatch" data-swatch="#D0C0E5" data-title="Prelude"></div>
+                    <div class="swatch" data-swatch="#E1F6E8" data-title="Tara"></div>
+                </div>
+                <div class="select">
+                    <!-- data-swatch can use images as well -->
+                    <!-- Patterns from Subtle Patterns -->
+                    <div class="swatch" data-swatch="img/patterns/hip-square.png" data-title="Hip Square"></div>
+                    <div class="swatch" data-swatch="img/patterns/organic-tiles.png" data-title="Organic Tiles"></div>
+                    <div class="swatch" data-swatch="img/patterns/skyscraper.png" data-title="Skyscraper"></div>
+                    <div class="swatch" data-swatch="img/patterns/vintage-concrete.png" data-title="Vintage Concrete"></div>
+                </div>
             </div>
         </div>
+
+        <div class="color-demo__area">
+            <img class="area__base" src="img/base.jpg" />
+
+            <svg class="area__component" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 307.2 172.8" style="enable-background:new 0 0 307.2 172.8;" xml:space="preserve">
+            
+                <!-- defs only necessary if you are using images -->
+                <defs>
+                    <!-- height and width must be consistent with pattern images -->
+                    <pattern id="component-pattern" patternUnits="userSpaceOnUse" height="400" width="400">
+                        <image class="pattern-img" x="0" y="0" height="400" width="400"></image>
+                    </pattern>
+                </defs>
+
+                <path d="M243.2,0h-16.8l-51.7,29.6L62.3-0.1L23.2,0l0.3,71.2L176.2,73l3.2-0.1l-1.2-39.8L243.2,0z M147.6,64.9l-0.5,0.2 l-40.7-3.6l0.2-33l0.5-0.2l40.5,11.1L147.6,64.9z" />
+            </svg>
+
+        </div>
+        <div class="color-demo__hud">
+            <h4 class="hud__title">Selected Swatch</h4>
+            <img class="hud__image" id="hud-image" />
+            <p class="hud__description" id="hud-description">
+                Default
+            </p>
+        </div>
     </div>
-
-    <div class="color-demo__area">
-        <img class="area__base" src="img/base.jpg" />
-
-        <svg class="area__component" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 307.2 172.8" style="enable-background:new 0 0 307.2 172.8;" xml:space="preserve">
-           
-            <!-- defs only necessary if you are using images -->
-            <defs>
-                <!-- height and width must be consistent with pattern images -->
-                <pattern id="component-pattern" patternUnits="userSpaceOnUse" height="400" width="400">
-                    <image class="pattern-img" x="0" y="0" height="400" width="400"></image>
-                </pattern>
-            </defs>
-
-            <path d="M243.2,0h-16.8l-51.7,29.6L62.3-0.1L23.2,0l0.3,71.2L176.2,73l3.2-0.1l-1.2-39.8L243.2,0z M147.6,64.9l-0.5,0.2 l-40.7-3.6l0.2-33l0.5-0.2l40.5,11.1L147.6,64.9z" />
-        </svg>
-
-    </div>
-    <div class="color-demo__hud">
-        <h4 class="hud__title">Selected Swatch</h4>
-        <img class="hud__image" id="hud-image" />
-        <p class="hud__description" id="hud-description">
-            Default
-        </p>
-    </div>
-</div>
+</body>
+</html>
