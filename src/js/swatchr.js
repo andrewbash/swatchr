@@ -18,5 +18,17 @@ var swatchr = {
                 selects[i].classList.add('select--active');
             }
         }
+    },
+
+    swatchFill: function() {
+        var swatches = document.getElementsByClassName('swatch');
+        for (var i = 0; i < swatches.length; i++) {
+            var swatchBackground = swatches[i].getAttribute('data-swatch');
+            if (swatchBackground.includes(".png")) {
+                swatches[i].style.background = "url(" + swatchBackground + ")";
+            } else {
+                swatches[i].style.background = swatchBackground;
+            }
+        }
     }
 }
