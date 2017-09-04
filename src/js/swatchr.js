@@ -24,8 +24,8 @@ var swatchr = {
         var swatches = document.getElementsByClassName('swatch');
         for (var i = 0; i < swatches.length; i++) {
             var swatchBackground = swatches[i].getAttribute('data-swatch');
-            if (swatchBackground.includes(".png")) {
-                swatches[i].style.background = "url(" + swatchBackground + ")";
+            if (swatchBackground.includes('.png')) {
+                swatches[i].style.background = 'url(' + swatchBackground + ')';
             } else {
                 swatches[i].style.background = swatchBackground;
             }
@@ -33,8 +33,8 @@ var swatchr = {
     },
 
     updateHud: function() {
-        var swatchTitle = document.getElementById("hud-description");
-        var hudImage = document.getElementById("hud-image");
+        var swatchTitle = document.getElementById('hud-description');
+        var hudImage = document.getElementById('hud-image');
         var swatches = document.getElementsByClassName('swatch');
 
         for (var i = 0; i < swatches.length; i++) {
@@ -42,15 +42,36 @@ var swatchr = {
         }
         function buttonBindClick(i) {
             return function () {
-                swatchTitle.innerHTML = swatches[i].getAttribute("data-title");
+                swatchTitle.innerHTML = swatches[i].getAttribute('data-title');
 
-                if (swatches[i].getAttribute('data-swatch').includes(".png")) {
-                    hudImage.style.background = "url(" + swatches[i].getAttribute('data-swatch') + ")";
+                if (swatches[i].getAttribute('data-swatch').includes('.png')) {
+                    hudImage.style.background = 'url(' + swatches[i].getAttribute('data-swatch') + ')';
                 } else {
                     hudImage.style.background = swatches[i].getAttribute('data-swatch');
                 }
             }
         }
 
+    },
+
+    updatePattern: function () {
+        var swatches = document.getElementsByClassName('swatch');
+        var path = document.getElementById('component-path');
+        var patternImage = document.getElementById('pattern-img');
+
+        for (var i = 0; i < swatches.length; i++) {
+            swatches[i].addEventListener('click', buttonBindClick(i));
+        }
+        function buttonBindClick(i) {
+            return function () {
+                if (swatches[i].getAttribute('data-swatch').includes('.png')) {
+                    path.style.fill = 'url(#component-pattern)';
+                    
+                    patternImage.setAttributeNS('http://www.w3.org/1999/xlink', 'href', swatches[i].getAttribute('data-swatch'));
+                } else {
+                    path.style.fill = swatches[i].getAttribute('data-swatch');
+                }
+            }
+        }
     }
 }
