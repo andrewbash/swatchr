@@ -1,15 +1,16 @@
-var swatchr = {
+'use strict';
+const swatchr = {
     controls: function() {
-        var buttons = document.getElementsByClassName('button');
-        var selects = document.getElementsByClassName('select');
+        const buttons = document.getElementsByClassName('button');
+        const selects = document.getElementsByClassName('select');
 
-        for (var i = 0; i < buttons.length; i++) {
+        for (let i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener('click', buttonBindClick(i));
         }
 
         function buttonBindClick(i) {
             return function () {
-                for (var j = 0; j < buttons.length; j++) {
+                for (let j = 0; j < buttons.length; j++) {
                     buttons[j].classList.remove('button--active');
                     selects[j].classList.remove('select--active');
 
@@ -21,9 +22,9 @@ var swatchr = {
     },
 
     swatchFill: function() {
-        var swatches = document.getElementsByClassName('swatch');
-        for (var i = 0; i < swatches.length; i++) {
-            var swatchBackground = swatches[i].getAttribute('data-swatch');
+        const swatches = document.getElementsByClassName('swatch');
+        for (let i = 0; i < swatches.length; i++) {
+            const swatchBackground = swatches[i].getAttribute('data-swatch');
             if (swatchBackground.includes('.png')) {
                 swatches[i].style.background = 'url(' + swatchBackground + ')';
             } else {
@@ -33,11 +34,11 @@ var swatchr = {
     },
 
     updateHud: function() {
-        var swatchTitle = document.getElementById('hud-description');
-        var hudImage = document.getElementById('hud-image');
-        var swatches = document.getElementsByClassName('swatch');
+        const swatchTitle = document.getElementById('hud-description');
+        const hudImage = document.getElementById('hud-image');
+        const swatches = document.getElementsByClassName('swatch');
 
-        for (var i = 0; i < swatches.length; i++) {
+        for (let i = 0; i < swatches.length; i++) {
             swatches[i].addEventListener('click', buttonBindClick(i));
         }
         function buttonBindClick(i) {
@@ -55,11 +56,11 @@ var swatchr = {
     },
 
     updatePattern: function () {
-        var swatches = document.getElementsByClassName('swatch');
-        var path = document.getElementById('component-path');
-        var patternImage = document.getElementById('pattern-img');
+        const swatches = document.getElementsByClassName('swatch');
+        const path = document.getElementById('component-path');
+        const patternImage = document.getElementById('pattern-img');
 
-        for (var i = 0; i < swatches.length; i++) {
+        for (let i = 0; i < swatches.length; i++) {
             swatches[i].addEventListener('click', buttonBindClick(i));
         }
         function buttonBindClick(i) {
